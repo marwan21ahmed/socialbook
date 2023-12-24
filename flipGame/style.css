@@ -1,0 +1,104 @@
+@font-face {
+    font-family: kak;
+    src: url(./Zeyada-Regular.ttf);
+}
+body {
+    background-image: url("./imgs/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family:kak;
+    height: 100%;
+    color: whitesmoke;
+    text-align: center;
+}
+#ll{
+    font-size: 2.5rem;
+}
+h1, h2, h3 {
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 2.6em;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-weight: 100;
+    font-size: 1.4em;
+    text-transform: uppercase;
+}
+
+#seconds, #tens {
+    font-size: 2em;
+}
+
+#container {
+    width: 630px;
+    margin: 10px auto;
+}
+
+[data-view="card"] {
+    transform: rotateY(180deg);
+    width: 100px;
+    height: 140px;
+    border: solid 1px #d3cece;
+    border-radius: 5px;
+    float: left;
+    margin: 10px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #f3f3f3 22px, #fff 22px, #fff 24px, transparent 24px, transparent 67px, #fff 67px, #fff 69px, transparent 69px), linear-gradient(225deg, #f3f3f3 22px, #fff 22px, #fff 24px, transparent 24px, transparent 67px, #fff 67px, #fff 69px, transparent 69px) 0 64px;
+    background-color: #f3f3f3;
+    background-size: 64px 128px;
+}
+
+.flipped {
+    transition: 0.6s;
+    position: relative;
+    transform: rotateY(0deg);
+}
+
+.reverse {
+    transition: 0.6s;
+    position: relative;
+    transform: rotateY(180deg);
+}
+
+.correct {
+    opacity: .5;
+    cursor: default;
+    position: relative;
+    transform: rotateY(0deg);
+}
+
+/* Images */
+.correct[data-item="html"],
+.flipped[data-item="html"] {
+    background: url("./html5.jpeg") left center no-repeat #fff;
+    background-size: contain;
+}
+
+.correct[data-item="css"],
+.flipped[data-item="css"] {
+    background: url("./css3.jpeg") left center no-repeat #fff;
+    background-size: contain;
+}
+
+.correct[data-item="js"],
+.flipped[data-item="js"] {
+    background: url("./js.jpeg") left center no-repeat #fff;
+    background-size: contain;
+}
+
+.correct[data-item="react"],
+.flipped[data-item="react"] {
+    background: url("./react.jpeg") left center no-repeat #fff;
+    background-size: contain;
+}
+
+.correct[data-item="angular"],
+.flipped[data-item="angular"] {
+    background: url("./angular.png") left center no-repeat #fff;
+    background-size: contain;
+}

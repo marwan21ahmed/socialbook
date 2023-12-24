@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in to Socialbock</title>
+    <link rel="stylesheet" href="./all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- log in page -->
+    <header>
+        <h1 id="socialbockTxt">Socialbock</h1>
+    </header>
+    <div class="logIn">
+        <p id="txtHead">Log in to Socialbock</p>
+        <!--  onsubmit="checkLogin()" -->
+        <form action="">
+            <!--   pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" -->
+            <input type="text" placeholder="Email address" name="emailInp" id="emailInp"
+                requiredtitle="Enter a valid email address">
+            <!-- <input type="password" id="password" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+])(?=.*[a-zA-Z]).{8,}$" title="Password must contain at least 8 characters, including at least one digit, one lowercase letter, one uppercase letter, and one special character." required> -->
+            <!--                 pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+])(?=.*[a-zA-Z]).{8,}$"-->
+            <input type="password" placeholder="Password" name="passInp" id="passInp" required
+                title="Password must contain at least 8 characters, including at least one digit, one lowercase letter, one uppercase letter, and one special character.">
+            <!-- onclick="checkLogin()" -->
+            <input type="submit" value="Log in" id="submitInp" onclick="show()">
+            <hr>
+            <p id="ttt">Don't have an account?</p>
+            <button id="signUpBtn" onclick="gotosignUp()">Create New account</button>
+        </form>
+        <!-- form sign up -->
+        <form class="form form--hidden" id="createAccount">
+            <h1 class="formtitle">Create Account</h1>
+            <div class="formerror"></div>
+            <div class="forminput">
+                <input type="text" id="signupUsername" class="forminputin" autofocus placeholder="Username">
+                <div class="formmasgeerror"></div>
+            </div>
+            <div class="forminput">
+                <input type="text" class="forminputin" autofocus placeholder="Email Address">
+                <div class="formmasgeerror"></div>
+            </div>
+            <div class="forminput">
+                <input type="password" class="forminputin" autofocus placeholder="Password">
+                <div class="formmasgeerror"></div>
+            </div>
+            <div class="forminput">
+                <input type="password" class="forminputin" autofocus placeholder="Confirm password">
+                <div class="formmasgeerror"></div>
+            </div>
+            <button class="formbuttn" type="submit">Continue</button>
+            <p class="signuptext">
+                <a class="havverlink" href="./index2.html" id="linkLogin">Already have an account? Sign in</a>
+            </p>
+        </form>
+        <!-- end form -->
+    </div>
+    <!-- <script src="./home.js"></script> -->
+    <script src="./loginjs.js"></script>
+ 
+</body>
+
+</html>

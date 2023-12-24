@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara Sabry FACEBOOK</title>
+    <link rel="stylesheet" href="./style2.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-TDNEpUTHQoQUJMHLrErGJyHg89uy71MyuHG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+<style>
+</style>
+
+
+</head>
+<body id="body1" onload="readData()" onbeforeunload="updateData()">
+    <div class="nav" id="nav">
+    <div class="nav-left">
+        <img src="./images/logo.png" class="logo">
+        <ul>
+            <li><img src="./images/notification.png"></li>
+            <li><img src="./images/inbox.png"></li>
+            <li><img src="./images/video.png"></li>
+            <li><i class="bi bi-moon-fill w-4" id="darkModeToggle" ></i></li>
+        </ul>
+    </div>
+    <div class="nav-right">
+        <div class="search-box">
+        <img src="images/search.png" onclick="search()" >
+          <input type="text" placeholder="search" id="search" oninput="showOffcanvas()">
+        </div>
+    <div class="nav-user-icon online">
+        <img src="" id="profileImgNav" >
+    </div>
+</div>
+    <!--------------------- settings-menu --------------------->
+
+<!-- <div class="settings-menu">
+    <div class="setting-menu-inner">
+        <div class="user-profile">
+            <img src="images/profile-pic.png">
+            <div>
+                <p>John Nicholson</p>
+                <a href="#">See your profile</a>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="user-profile">
+            <img src="images/feedback.png">
+            <div>
+                <p>GIVE FEEDBACK</p>
+                <a href="#">Help us to improve the new design</a>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+    </div>
+        <div class="setting-links">
+        <img src="images/setting.png" class="setting-icon">
+        <a href="#">Help & support<img src="images/arrow.png" width="10px"></a>
+    </div>
+    <div class="setting-links">
+    <img src="images/help.png" class="setting-icon">
+    <a href="#">settings & privacy<img src="images/arrow.png" width="10px"></a>
+</div>
+<div class="setting-links">
+<img src="images/display.png" class="setting-icon">
+<a href="#">Display & Accessibility<img src="images/arrow.png" width="10px"></a>
+</div>
+<div class="setting-links">
+    <img src="images/logout.png" class="setting-icon">
+    <a href="#">Logout<img src="images/arrow.png" width="10px"></a>
+    </div> -->
+
+</div>
+<div class="container" id="container-dark">
+    <!-- left-sidebar -->
+<div class="left-sidebar">
+<div class="imp-links">
+<a href="#"><img src="images/news.png">Latest News</a>
+<a href="#"><img src="images/friends.png">Friends</a>
+<a href="#"><img src="images/group.png">Group</a>
+<a href="#"><img src="images/marketplace.png">Marketplace</a>
+<a href="#"><img src="images/watch.png">Watch</a>
+<a href="#">See More</a>
+</div>
+<div class="shortcut-links">
+<p>Your Shortcuts</p>
+<a href="#"><img src="images/shortcut-1.png"> Web Developers</a>
+<a href="#"><img src="images/shortcut-2.png"> Web Design course</a>
+<a href="#"><img src="images/shortcut-3.png"> Full Stack Development</a>
+<a href="#"><img src="images/shortcut-4.png"> Website Experts</a>
+</div>
+<div class="shortcut-links">
+<p>GAMING</p>
+<a href="./flipGame/index.html"><i class="bi bi-phone-flip "></i> FLIPING CARD</a>
+<a href="./square1/index.html"><i class="bi bi-phone-flip "></i> SQUARE GAME </a>
+<a href="./snake/index.html"><i class="bi bi-phone-flip "></i> SNAKE GAME</a>
+</div>
+</div>
+<!-- main content -->
+<div class="main-content" id="main">
+    <div class="story-gallery">
+        <div class="story story1" id="SroryImg">
+            <img src="images/upload.png">
+            <p>Post Story</p>
+        </div>
+        <div class="story story2">
+            <img src="images/member-1.png">
+            <p>Alison</p>
+        </div>
+        <div class="story story3">
+            <img src="images/member-2.png">
+            <p>Jackson</p>
+        </div>
+        <div class="story story4">
+            <img src="images/member-3.png">
+            <p>Samona</p>
+        </div>
+        <div class="story story5">
+            <img src="images/member-4.png">
+            <p>John poe</p>
+        </div>
+    </div>
+    <div class="write-post-container" id="write-post-container">
+    <div class="user-profile">
+        <img src="" id="postImgH">
+        <div>
+            <p id = "username">John Nicholson</p>
+            <small>Pulic</small>
+        </div>
+    </div>
+    <div class="post-input-container" id="post-input-container">
+      <div id="write-post">
+        <textarea rows="3" placeholder="what is on your mind,john?" oninput="displaySubmitButton(this)">
+        </textarea>
+        <div class="add-post-links" id="addpostlinks">
+            <a href="#"><img src="images/live-video.png"> Live Video</a>
+            <!-- <a href="#"><img src="images/photo.png" >Photo/Video</a> -->
+            <label for="fileInput" style="cursor: pointer;">
+                <img src="images/photo.png" alt="Photo/Video"> Photo/Video
+            </label>
+            <input type="file" id="fileInput" style="display: none;" onchange="addImagetoPost(this)">
+            <a href="#"><img src="images/feeling.png">Feeling/Activity</a>
+
+            <button class = "postButton" onclick="addPost()">POST</button>
+        </div>
+       </div> 
+    </div>
+
+    </div>
+<div class="overlay" id="overlay"></div>
+
+  <div class="offcanvass" id="myOffcanvas">
+    <h2>Search Results</h2>
+    <div id="searchResults"></div>
+  </div>
+<div class="post-container">
+    <div class="post-row">
+        <div class="user-profile">
+            <img src="images/profile-pic.png">
+            <div>
+                <p>John Nicholson</p><br>
+                <span>December 12 2023 12:00 pm</span><br>
+            </div>
+    </div> 
+      <a href="#"></a>
+    </div>
+    <!-- <div class="user-profile">
+        <img src="images/profile-pic.png">
+        <div>
+            <p>John Nicholson</p><br>
+            <span>December 12 2023 12:00 pm</span><br>
+        </div>
+</div> -->
+<p class="post-text">welcome to <span>SARA</span> website <a href="#">SARA SITE</a><P class="post-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fugiat, dicta assumenda natus nesciunt perferendis! Veniam perspiciatis labore tenetur tempore quo quae mollitia provident, nobis nesciunt molestiae sequi iusto architecto.</P></p><br>
+<img src="images/feed-image-1.png" class="Post-img">
+<div class="post-row">
+    <div class="activity-icons">
+<div><img src="images/like-blue.png">120</div>
+<div><img src="images/comments.png">45</div> 
+<div><img src="images/share.png">20</div>
+    </div>
+    <div class="post-profile-icon">
+ <img src="images/profile-pic.png">
+    </div>
+</div>
+</div>
+<div class="post-container">
+    <div class="post-row">
+        <div class="user-profile">
+            <img src="images/profile-pic.png">
+            <div>
+                <p>John Nicholson</p><br>
+                <span>December 12 2023 12:00 pm</span><br>
+            </div>
+    </div> 
+      <a href="#"></a>
+    </div>
+    <!-- <div class="user-profile">
+        <img src="images/profile-pic.png">
+        <div>
+            <p>John Nicholson</p><br>
+            <span>December 12 2023 12:00 pm</span><br>
+        </div>
+</div> -->
+<p class="post-text">like and share <span>SARA</span> website <a href="#">to your friends</a><P class="post-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fugiat, dicta assumenda natus nesciunt perferendis! Veniam perspiciatis labore tenetur tempore quo quae mollitia provident, nobis nesciunt molestiae sequi iusto architecto.</P></p><br>
+<img src="images/feed-image-2.png" class="Post-img">
+<div class="post-row">
+    <div class="activity-icons">
+<div><img src="images/like.png">120</div>
+<div><img src="images/comments.png">45</div>
+<div><img src="images/share.png">20</div>
+    </div>
+    <div class="post-profile-icon">
+ <img src="images/profile-pic.png">
+    </div>
+</div>
+</div>
+<div class="post-container">
+    <div class="post-row">
+        <div class="user-profile">
+            <img src="images/profile-pic.png">
+            <div>
+                <p>John Nicholson</p><br>
+                <span>December 12 2023 12:00 pm</span><br>
+            </div>
+    </div> 
+      <a href="#"></a>
+    </div>
+    <!-- <div class="user-profile">
+        <img src="images/profile-pic.png">
+        <div>
+            <p>John Nicholson</p><br>
+            <span>December 12 2023 12:00 pm</span><br>
+        </div>
+</div> -->
+<p class="post-text">welcome to <span>SARA</span> website <a href="#">SARA SITE</a><P class="post-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fugiat, dicta assumenda natus nesciunt perferendis! Veniam perspiciatis labore tenetur tempore quo quae mollitia provident, nobis nesciunt molestiae sequi iusto architecto.</P></p><br>
+<img src="images/feed-image-3.png" class="Post-img">
+<div class="post-row">
+    <div class="activity-icons">
+<div><img src="images/like-blue.png">120</div>
+<div><img src="images/comments.png">45</div>
+<div><img src="images/share.png">20</div>
+    </div>
+    <div class="post-profile-icon">
+ <img src="images/profile-pic.png">
+    </div>
+</div>
+</div>
+<div class="post-container">
+    <div class="post-row">
+        <div class="user-profile">
+            <img src="images/profile-pic.png">
+            <div>
+                <p>John Nicholson</p><br>
+                <span>December 12 2023 12:00 pm</span><br>
+            </div>
+    </div> 
+      <a href="#"></a>
+    </div>
+    <!-- <div class="user-profile">
+        <img src="images/profile-pic.png">
+        <div>
+            <p>John Nicholson</p><br>
+            <span>December 12 2023 12:00 pm</span><br>
+        </div>
+</div> -->
+<p class="post-text">welcome to <span>SARA</span> website <a href="#">SARA SITE</a><P class="post-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fugiat, dicta assumenda natus nesciunt perferendis! Veniam perspiciatis labore tenetur tempore quo quae mollitia provident, nobis nesciunt molestiae sequi iusto architecto.</P></p><br>
+<img src="images/feed-image-4.png" class="Post-img">
+<div class="post-row">
+    <div class="activity-icons">
+<div><img src="images/like-blue.png">120</div>
+<div><img src="images/comments.png">45</div>
+<div><img src="images/share.png">20</div>
+    </div>
+    <div class="post-profile-icon">
+ <img src="images/profile-pic.png">
+    </div>
+</div>
+</div>
+<div class="post-container">
+    <div class="post-row">
+        <div class="user-profile">
+            <img src="images/profile-pic.png">
+            <div>
+                <p>John Nicholson</p><br>
+                <span>December 12 2023 12:00 pm</span><br>
+            </div>
+    </div> 
+      <a href="#"></a>
+    </div>
+    <!-- <div class="user-profile">
+        <img src="images/profile-pic.png">
+        <div>
+            <p>John Nicholson</p><br>
+            <span>December 12 2023 12:00 pm</span><br>
+        </div>
+</div> -->
+<p class="post-text">welcome to <span>SARA</span> website <a href="#">SARA SITE</a><P class="post-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fugiat, dicta assumenda natus nesciunt perferendis! Veniam perspiciatis labore tenetur tempore quo quae mollitia provident, nobis nesciunt molestiae sequi iusto architecto.</P></p><br>
+<img src="images/feed-image-5.png" class="Post-img">
+<div class="post-row">
+    <div class="activity-icons">
+<div><img src="images/like-blue.png">120</div>
+<div><img src="images/comments.png">45</div>
+<div><img src="images/share.png">20</div>
+    </div>
+    <div class="post-profile-icon">
+ <img src="images/profile-pic.png">
+    </div>
+</div>
+</div>
+<button type="button" class="load-more-btn">load more</button>
+</div>
+<!-- right-sidebar -->
+<div class="right-sidebar" id="right-sidebar">
+    <div class="sidebar-title">
+        <h4>Events</h4>
+        <a href="#">See All</a>
+    </div>
+
+    <div class="event">
+        <div class="left-event">
+         <h3>18</h3>
+         <span>March</span>
+
+        </div>
+        <div class="right-event">
+            <h4>Social MediA</h4>
+            <P>Willson Tech Park</P>
+            <a href="#">More Info</a>
+        </div>
+    </div>
+    <div class="event">
+        <div class="left-event">
+         <h3>22</h3>
+         <span>June</span>
+
+        </div>
+        <div class="right-event">
+            <h4>Mobile Marketing</h4>
+            <P>Willson Tech Park</P>
+            <a href="#">More Info</a>
+        </div>
+    </div>
+    <div class="sidebar-title">
+        <h4>Advertisement</h4>
+        <a href="#">Close</a>
+    </div>
+    <img src="images/advertisement.png" class="sidebar-ads">
+    <div class="sidebar-title">
+        <h4>conversation</h4>
+        <a href="#">Hide Chat</a>
+    </div>
+<div class="online-list">
+    <div class="online">
+        <img src="images/member-1.png">
+    </div>
+    <p>Alison Mina</p>
+</div>
+<div class="online-list">
+    <div class="online">
+        <img src="images/member-2.png">
+    </div>
+    <p>Jackson Astron</p>
+</div>
+<div class="online-list">
+    <div class="online">
+        <img src="images/member-3.png">
+    </div>
+    <p>Semon Rose</p>
+</div>
+</div>
+</div>
+<div class="footer">
+
+    <!-- slider Nada -->
+    <div class="container_slider">
+        <i class="fa-solid fa-angle-left" id="previous_Img" onclick="showSlides()"></i>
+
+        <img src="./images/nada.png" class="img" id="1">
+        <img src="./images/marwan.png" class="img" id="2">
+        <img src="./images/menna.jpg" class="img" id="3">
+        <img src="./images/zyad.jpg" class="img" id="4">
+        <img src="./images/sara.png" class="img" id="5">
+
+        <i class="fa-solid fa-chevron-right" id="next_Img" onclick="showSlides()"></i>
+
+    </div>
+
+<p>copyright 2023 @ Sara Sabry</p>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script src="./home.js"></script>
+<script src="loginjs.js"></script>
+
+<script>
+
+    setImgSrcOnLoad(localStorage.getItem('userImg'),localStorage.getItem('IDuser'),localStorage.getItem('NameUser'), "profileImgNav", "SroryImg", "postImgH");
+   
+//    console.log(localStorage.getItem('userInfo'));
+    let slideIndex = 0;
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("img");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+</script>
+
+</body>
+</html>
